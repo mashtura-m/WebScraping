@@ -42,10 +42,10 @@ class WikiList1{
         while(tr.find()){
 
             def row=tr.group(0)
-            name=row=~"(?ism)<td.*?title.+?>(.+?)<\/a>"
-            party=row=~"td>([A-Z ]+.+?[^a-z])<\/td>"
-            born=row=~"(?ism)<td>(\d{4})<\/td>"
-            state=row=~"(?m)<td>([A-Z ].+[a-z]+)<\/td>"
+            name=row=~/(?ism)<td.*?title.+?>(.+?)<\/a>/
+            party=row=~/td>([A-Z ]+.+?[^a-z])<\/td>/
+            born=row=~/(?ism)<td>(\d{4})<\/td>/
+            state=row=~/(?m)<td>([A-Z ].+[a-z]+)<\/td>/
 
             String info="";
 
