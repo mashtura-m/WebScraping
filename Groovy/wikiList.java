@@ -35,7 +35,7 @@ class WikiList {
 
     static void getData() {
        //get rows
-         pattern=Pattern.compile("(?ism)^<tr>.+?</tr>\$")
+         pattern=Pattern.compile("(?ism)^<tr>.+?<\\/tr>\$")
          m=pattern.matcher(table)
 
         while(m.find()) {
@@ -50,7 +50,7 @@ class WikiList {
             date=Pattern.compile("(?ism)<td>(\\d{4})<\\/td>")
             def dateMatch=date.matcher(row)
 
-            party=Pattern.compile("<td>([A-Z ]+.+?[^a-z])<\/td>")
+            party=Pattern.compile("<td>([A-Z ]+.+?[^a-z])<\\/td>")
             def partyMatcher=party.matcher(row)
 
             state=Pattern.compile("<td>([A-Z].+[a-z])<\\/td>")
